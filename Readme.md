@@ -2,7 +2,11 @@
 
 > The pseudo-server
 
-Pseurver is designed to provide very basic responses to pre-registered routes. It presents an alternative approach to the server mocking in test helpers like Moxios and Sinon. Rather than setting up spies, you set up an actual HTTP server, and tell it what response you expect to receive for a given route. 
+Pseurver is designed to provide very basic responses to pre-registered routes. It presents an alternative approach to the server mocking in test helpers like Moxios and Sinon. Rather than setting up spies or overriding mechanisms, you set up an actual HTTP server, and tell it what response you expect to receive for a given route. 
+
+It can be preferable to spies/overrides in scenarios where:-
+*	you do not necessarily know which mechanism will be used (`fetch`, `axios`, `xhrHttpRequest` etc)
+*	you're too impatient to debug your spies or overrides, and want a lazy solution
 
 Pseurver **is**:-
 *	standalone
