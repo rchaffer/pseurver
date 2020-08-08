@@ -1,0 +1,21 @@
+{
+  "name": "pseurver",
+  "version": "1.0.0",
+  "description": "The pseudo-server - allows server mocking to ease the testing of API consumers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [
+    "server",
+    "mocking",
+    "testing",
+    "pseurver"
+  ],
+  "author": "Richard Chaffer",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.6.1",
+    "node-fetch": "^2.6.0"
+  }
+}
