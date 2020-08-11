@@ -2,6 +2,8 @@ const http = require("http");
 
 class Pseurver {
     constructor(port){
+        this.verbose = false;
+
         if(!port)
             throw Error("No port specified");
 
@@ -47,6 +49,8 @@ class Pseurver {
 
         this.status = "STARTED";
 
+        this.log("Server Started");
+
         return this;
     }
 
@@ -55,7 +59,20 @@ class Pseurver {
 
         this.status = "STOPPED";
 
+        this.log("Server Stopped");
+
         return this;
+    }
+
+    setVerbose(state){
+        this.verbose = state;
+
+        return this;
+    }
+
+    log(message){
+        if(this.verbose)
+            console.info("Pseurver (:"+this.port+"): "+message);
     }
 
     register(requestMethod, requestUrl, responseStatus, responseBody, responseHeaders){
@@ -67,6 +84,8 @@ class Pseurver {
             body: responseBody,
             headers: responseHeaders
         };
+
+        this.log("Route `"+requestMethod+" "+requestUrl+"` Registered");
 
         return this;
     }
